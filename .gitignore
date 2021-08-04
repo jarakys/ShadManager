@@ -88,3 +88,7 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+ShadShopManager/ShadShopManager.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ShadShopManager/ShadShopManager.xcodeproj/xcshareddata/xcschemes/ShadShopManager.xcscheme
+ShadShopManager/ShadShopManager.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+ShadShopManager/ShadShopManager.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
