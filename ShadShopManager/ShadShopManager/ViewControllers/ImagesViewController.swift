@@ -89,10 +89,10 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = imagesCollectionView.dequeueReusableCell(withReuseIdentifier: "cellImage", for: indexPath) as! ImageCollectionViewCell
         let image = arrayOfImages[indexPath.item]
         cell.imageView.image = image
-        cell.deleteDidTap = {[weak self] in
+        cell.deleteDidTap = {[weak self, weak collectionView] in
             guard let self = self else { return }
             self.arrayOfImages.remove(at: indexPath.item)
-            collectionView.reloadData()
+            collectionView?.reloadData()
         }
         return cell
     }
