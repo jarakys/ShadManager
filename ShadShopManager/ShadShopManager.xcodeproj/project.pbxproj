@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		11E54ECD26B07FD20002A7A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E54ECC26B07FD20002A7A5 /* AppDelegate.swift */; };
 		11E54ECF26B07FD20002A7A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E54ECE26B07FD20002A7A5 /* SceneDelegate.swift */; };
-		11E54ED426B07FD20002A7A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E54ED226B07FD20002A7A5 /* Main.storyboard */; };
+		11E54ED426B07FD20002A7A5 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E54ED226B07FD20002A7A5 /* Auth.storyboard */; };
 		11E54ED626B07FD50002A7A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11E54ED526B07FD50002A7A5 /* Assets.xcassets */; };
 		11E54ED926B07FD50002A7A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E54ED726B07FD50002A7A5 /* LaunchScreen.storyboard */; };
 		11E54EE326B0836D0002A7A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E54EE226B0836D0002A7A5 /* LoginViewController.swift */; };
@@ -19,6 +19,11 @@
 		11E54EF526B567640002A7A5 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E54EF326B567640002A7A5 /* ImageCollectionViewCell.xib */; };
 		11E54EF726B5D5050002A7A5 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E54EF626B5D5050002A7A5 /* ImagesViewController.swift */; };
 		11F5E07F26BC5B2D008D9170 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 11F5E07E26BC5B2D008D9170 /* Alamofire */; };
+		ED25D59626C2FC52007DF680 /* String+isMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D59526C2FC52007DF680 /* String+isMatch.swift */; };
+		ED25D59826C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D59726C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift */; };
+		ED25D59C26C2FE39007DF680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED25D59B26C2FE39007DF680 /* Main.storyboard */; };
+		ED25D5A026C30071007DF680 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D59F26C30071007DF680 /* ReusableCell.swift */; };
+		ED25D5A326C30195007DF680 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = ED25D5A226C30195007DF680 /* BSImagePicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +43,7 @@
 		11E54EC926B07FD20002A7A5 /* ShadShopManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShadShopManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E54ECC26B07FD20002A7A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11E54ECE26B07FD20002A7A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11E54ED326B07FD20002A7A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11E54ED326B07FD20002A7A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		11E54ED526B07FD50002A7A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E54ED826B07FD50002A7A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11E54EDA26B07FD50002A7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +53,10 @@
 		11E54EF226B567640002A7A5 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		11E54EF326B567640002A7A5 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		11E54EF626B5D5050002A7A5 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		ED25D59526C2FC52007DF680 /* String+isMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isMatch.swift"; sourceTree = "<group>"; };
+		ED25D59726C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
+		ED25D59B26C2FE39007DF680 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		ED25D59F26C30071007DF680 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F5E07F26BC5B2D008D9170 /* Alamofire in Frameworks */,
+				ED25D5A326C30195007DF680 /* BSImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +91,14 @@
 		11E54ECB26B07FD20002A7A5 /* ShadShopManager */ = {
 			isa = PBXGroup;
 			children = (
-				11E54EED26B447CA0002A7A5 /* Resources */,
+				ED25D59E26C30062007DF680 /* Protocols */,
+				ED25D59D26C2FEFE007DF680 /* Cells */,
+				ED25D59426C2FC40007DF680 /* Extensions */,
 				11E54EEC26B447350002A7A5 /* ViewControllers */,
 				11E54ECC26B07FD20002A7A5 /* AppDelegate.swift */,
 				11E54ECE26B07FD20002A7A5 /* SceneDelegate.swift */,
 				11E54EDA26B07FD50002A7A5 /* Info.plist */,
+				11E54EED26B447CA0002A7A5 /* Resources */,
 			);
 			path = ShadShopManager;
 			sourceTree = "<group>";
@@ -96,7 +109,6 @@
 				11E54EE226B0836D0002A7A5 /* LoginViewController.swift */,
 				11E54EEA26B447210002A7A5 /* RegisterViewController.swift */,
 				11E54EEE26B44B350002A7A5 /* BaseViewController.swift */,
-				11E54EF226B567640002A7A5 /* ImageCollectionViewCell.swift */,
 				11E54EF626B5D5050002A7A5 /* ImagesViewController.swift */,
 			);
 			path = ViewControllers;
@@ -105,12 +117,54 @@
 		11E54EED26B447CA0002A7A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				11E54EF326B567640002A7A5 /* ImageCollectionViewCell.xib */,
-				11E54ED226B07FD20002A7A5 /* Main.storyboard */,
+				ED25D59A26C2FDB8007DF680 /* Storyboards */,
+				ED25D59926C2FDA5007DF680 /* Cells */,
 				11E54ED526B07FD50002A7A5 /* Assets.xcassets */,
 				11E54ED726B07FD50002A7A5 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED25D59426C2FC40007DF680 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED25D59526C2FC52007DF680 /* String+isMatch.swift */,
+				ED25D59726C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED25D59926C2FDA5007DF680 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11E54EF326B567640002A7A5 /* ImageCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ED25D59A26C2FDB8007DF680 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				11E54ED226B07FD20002A7A5 /* Auth.storyboard */,
+				ED25D59B26C2FE39007DF680 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ED25D59D26C2FEFE007DF680 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11E54EF226B567640002A7A5 /* ImageCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ED25D59E26C30062007DF680 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ED25D59F26C30071007DF680 /* ReusableCell.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +186,7 @@
 			name = ShadShopManager;
 			packageProductDependencies = (
 				11F5E07E26BC5B2D008D9170 /* Alamofire */,
+				ED25D5A226C30195007DF680 /* BSImagePicker */,
 			);
 			productName = ShadShopManager;
 			productReference = 11E54EC926B07FD20002A7A5 /* ShadShopManager.app */;
@@ -162,6 +217,7 @@
 			mainGroup = 11E54EC026B07FD20002A7A5;
 			packageReferences = (
 				11F5E07D26BC5B2D008D9170 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				ED25D5A126C30195007DF680 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
 			);
 			productRefGroup = 11E54ECA26B07FD20002A7A5 /* Products */;
 			projectDirPath = "";
@@ -178,8 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				11E54ED926B07FD50002A7A5 /* LaunchScreen.storyboard in Resources */,
+				ED25D59C26C2FE39007DF680 /* Main.storyboard in Resources */,
 				11E54ED626B07FD50002A7A5 /* Assets.xcassets in Resources */,
-				11E54ED426B07FD20002A7A5 /* Main.storyboard in Resources */,
+				11E54ED426B07FD20002A7A5 /* Auth.storyboard in Resources */,
 				11E54EF526B567640002A7A5 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,25 +248,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED25D5A026C30071007DF680 /* ReusableCell.swift in Sources */,
 				11E54EF426B567640002A7A5 /* ImageCollectionViewCell.swift in Sources */,
 				11E54EF726B5D5050002A7A5 /* ImagesViewController.swift in Sources */,
+				ED25D59626C2FC52007DF680 /* String+isMatch.swift in Sources */,
 				11E54EEF26B44B350002A7A5 /* BaseViewController.swift in Sources */,
 				11E54EE326B0836D0002A7A5 /* LoginViewController.swift in Sources */,
 				11E54EEB26B447210002A7A5 /* RegisterViewController.swift in Sources */,
 				11E54ECD26B07FD20002A7A5 /* AppDelegate.swift in Sources */,
 				11E54ECF26B07FD20002A7A5 /* SceneDelegate.swift in Sources */,
+				ED25D59826C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		11E54ED226B07FD20002A7A5 /* Main.storyboard */ = {
+		11E54ED226B07FD20002A7A5 /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				11E54ED326B07FD20002A7A5 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 		11E54ED726B07FD50002A7A5 /* LaunchScreen.storyboard */ = {
@@ -411,6 +471,14 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		ED25D5A126C30195007DF680 /* XCRemoteSwiftPackageReference "BSImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mikaoj/BSImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -418,6 +486,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 11F5E07D26BC5B2D008D9170 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		ED25D5A226C30195007DF680 /* BSImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED25D5A126C30195007DF680 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
+			productName = BSImagePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

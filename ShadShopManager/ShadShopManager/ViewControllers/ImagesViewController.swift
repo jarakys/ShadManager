@@ -6,85 +6,59 @@
 //
 
 import UIKit
-import PhotosUI
+import BSImagePicker
+import Photos
 
-
-@available(iOS 14, *)
 class ImagesViewController: UIViewController{
-
-    var configuration = PHPickerConfiguration()
-    var arrayOfImages = [UIImage]()
-    
-    let countCells = 2
-    let offset: CGFloat = 5.0
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
+    private var imagePicker = ImagePickerController()
+    
+    private var arrayOfImages = [UIImage]()
+    
+    private let countCells = 2
+    private let offset: CGFloat = 5.0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imagesCollectionView.dataSource = self
+        imagesCollectionView.delegate = self
+        imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.reusableIndentify)
+    }
+    
+    private func presentPicker() {
+        presentImagePicker(imagePicker,
+                           select: { (asset) in
+                            print("select")
+                           }, deselect: { (asset) in
+                            print("deselect")
+                           }, cancel: { (assets) in
+                            print("cancel")
+                           }, finish: { (assets) in
+                            print("finish")
+                           })
+    }
     
     @IBAction func addImagesOnClick(_ sender: UIButton) {
-        
-        let imgPicker = PHPickerViewController(configuration: configuration)
-        imgPicker.delegate = self
-        
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
-            
-            }))
+            //TODO: Open camera
+        }))
         
-        actionSheet.addAction(UIAlertAction(title: "Library", style: .default, handler: {(action: UIAlertAction) in
-        self.present(imgPicker, animated: true, completion: nil)
-            
+        actionSheet.addAction(UIAlertAction(title: "Library", style: .default, handler: {[weak self] (action: UIAlertAction) in
+            self?.presentPicker()
         }))
         
         actionSheet.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configuration.filter = .images
-        configuration.selectionLimit = 10
-        imagesCollectionView.dataSource = self
-        imagesCollectionView.delegate = self
-        imagesCollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cellImage")
-    }
-
-
 }
 
-@available(iOS 14, *)
-extension ImagesViewController: PHPickerViewControllerDelegate{
-    
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult])
-    {
-        for result in results{
-            result.itemProvider.loadObject(ofClass: UIImage.self, completionHandler: {[weak self](object, error) in
-                guard let self = self else { return }
-                if let image = object as? UIImage {
-                    self.arrayOfImages.append(image)
-                    DispatchQueue.main.async {
-                        self.imagesCollectionView.reloadData()
-                    }
-                    
-                }
-            })
-        }
-        picker.dismiss(animated: true, completion: nil)
-        
-    }
-
-
-
-
-}
-    
-@available(iOS 14, *)
 extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrayOfImages.count
     }
     
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imagesCollectionView.dequeueReusableCell(withReuseIdentifier: "cellImage", for: indexPath) as! ImageCollectionViewCell
         let image = arrayOfImages[indexPath.item]

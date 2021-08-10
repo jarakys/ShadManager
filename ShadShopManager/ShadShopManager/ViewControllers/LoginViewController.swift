@@ -8,25 +8,21 @@
 import UIKit
 
 class LoginViewController: BaseViewController {
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loginButton.layer.cornerRadius = 15
-
         registerButton.layer.cornerRadius = 15
-
     }
- 
-    @IBOutlet weak var loginButton: UIButton!
     
-    @IBOutlet weak var registerButton: UIButton!
-    
-    @available(iOS 14, *)
     @IBAction func Login(_ sender: UIButton) {
-        guard let quotesViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ImagesViewController") as? ImagesViewController else {
-               fatalError("Unable to Instantiate Quotes View Controller")
-           }
-        navigationController?.pushViewController(quotesViewController, animated: false)
+        let storyboard = UIStoryboard.storyboard(storyboard: .main)
+        let imagesViewController: ImagesViewController = storyboard.instantiateViewController()
+        navigationController?.pushViewController(imagesViewController, animated: false)
      }
 }
 

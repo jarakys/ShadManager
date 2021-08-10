@@ -8,50 +8,39 @@
 import UIKit
 
 class RegisterViewController: BaseViewController {
-
+    
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var backToLogButton: UIButton!
+    @IBOutlet weak var errorEmailLabel: UILabel!
+    @IBOutlet weak var errorPassLabel: UILabel!
+    
     private var regexEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     
     private var regexPass = "[A-Z0-9a-z]{8,}"
     
-    
-    @IBOutlet weak var registerButton: UIButton!
-    
-    @IBOutlet weak var backToLogButton: UIButton!
-    
-    @IBOutlet weak var errorEmailLabel: UILabel!
-    
-    @IBOutlet weak var errorPassLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerButton.layer.cornerRadius = 15
+        backToLogButton.layer.cornerRadius = 15
+    }
     
     @IBAction func headBackButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        registerButton.layer.cornerRadius = 15
-        
-        backToLogButton.layer.cornerRadius = 15
-    
-    }
-    
     @IBAction func registerButton(_ sender: UIButton) {
-    
-    if emailTextField.text != nil && emailTextField.text!.isMatch(regexEmail) {
-           errorEmailLabel.text = "done"
-  
-       }
-       else {
-           errorEmailLabel.text = "Incorrct email format"
-           
-       }
-       
-       if passTextField.text != nil && passTextField.text!.isMatch(regexPass) {
-           errorPassLabel.text = "done"
-           
-       }
-       else {errorPassLabel.text = "Incorrct pass format"}
-        
-       }
+        if let email = emailTextField.text, email.isMatch(regexEmail) {
+            errorEmailLabel.text = "done"
+        }
+        else {
+            errorEmailLabel.text = "Incorrct email format"
+        }
+        if let password = passTextField.text, password.isMatch(regexPass) {
+            errorPassLabel.text = "done"
+        }
+        else {
+            errorPassLabel.text = "Incorrct pass format"}
+    }
 }
 
 

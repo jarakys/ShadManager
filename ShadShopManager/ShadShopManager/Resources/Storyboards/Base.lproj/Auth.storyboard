@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,9 +74,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Register"/>
-                                                <connections>
-                                                    <segue destination="loq-f7-0tE" kind="show" id="d4n-YU-8Du"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9J-Dw-nSb">
                                                 <rect key="frame" x="207" y="478" width="0.0" height="0.0"/>
@@ -138,9 +134,7 @@
                             <constraint firstItem="Q6L-kv-7xo" firstAttribute="top" secondItem="Boz-hx-KCk" secondAttribute="top" id="LC1-dU-tge"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="login" id="aBm-bD-a9U">
-                        <barButtonItem key="backBarButtonItem" title="back" id="D2I-eR-YFz"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="aBm-bD-a9U"/>
                     <connections>
                         <outlet property="emailTextField" destination="TVn-jH-nRK" id="sPb-XC-uBw"/>
                         <outlet property="loginButton" destination="djU-bY-uLr" id="TT1-4k-fe7"/>
@@ -162,13 +156,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IR-oC-1VY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j38-d1-o66">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pib-nt-acQ">
-                                                <rect key="frame" x="107" y="367" width="200" height="40"/>
+                                                <rect key="frame" x="107" y="389" width="200" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="4sn-JV-ivs"/>
                                                     <constraint firstAttribute="height" constant="40" id="WHZ-wl-q32"/>
@@ -180,13 +174,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shad Shop Manager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLm-8j-4yT">
-                                                <rect key="frame" x="130" y="266" width="154.5" height="21"/>
+                                                <rect key="frame" x="130" y="288" width="154.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bsX-vw-Us2">
-                                                <rect key="frame" x="107" y="437" width="200" height="40"/>
+                                                <rect key="frame" x="107" y="459" width="200" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="BMr-bJ-ehe"/>
                                                     <constraint firstAttribute="height" constant="40" id="afo-0F-HFe"/>
@@ -198,7 +192,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-Dn-MKV">
-                                                <rect key="frame" x="167" y="517" width="80" height="34"/>
+                                                <rect key="frame" x="167" y="539" width="80" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="R4w-mW-fbf"/>
@@ -210,7 +204,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xk-fd-s84">
-                                                <rect key="frame" x="155" y="584" width="104" height="35"/>
+                                                <rect key="frame" x="155" y="606" width="104" height="35"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="3dg-k5-fYr"/>
@@ -222,7 +216,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-ng-L1N">
-                                                <rect key="frame" x="207" y="408" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="207" y="430" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
@@ -290,65 +284,10 @@
             </objects>
             <point key="canvasLocation" x="1569.5652173913045" y="73.660714285714278"/>
         </scene>
-        <!--Images View Controller-->
-        <scene sceneID="DTs-6e-JW4">
-            <objects>
-                <viewController storyboardIdentifier="ImagesViewController" id="Ma3-Pq-vLl" customClass="ImagesViewController" customModule="ShadShopManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wvy-kj-bns">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6j-Sc-Q2c">
-                                <rect key="frame" x="0.0" y="44" width="414" height="812"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="BEw-hE-owL">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellImage" id="ip0-Y5-oBk" customClass="ImageCollectionViewCell" customModule="ShadShopManager" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lEZ-7d-jwi">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldg-gM-Krx">
-                                <rect key="frame" x="192" y="851" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addImagesOnClick:" destination="Ma3-Pq-vLl" eventType="touchUpInside" id="abe-ga-OMs"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xT0-x8-70t"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="s6j-Sc-Q2c" secondAttribute="bottom" constant="40" id="JCP-EG-Anb"/>
-                            <constraint firstItem="s6j-Sc-Q2c" firstAttribute="leading" secondItem="xT0-x8-70t" secondAttribute="leading" id="TcZ-Nj-LGF"/>
-                            <constraint firstItem="Ldg-gM-Krx" firstAttribute="centerX" secondItem="xT0-x8-70t" secondAttribute="centerX" id="Xvs-j8-vXf"/>
-                            <constraint firstItem="s6j-Sc-Q2c" firstAttribute="top" secondItem="xT0-x8-70t" secondAttribute="top" id="kTz-pE-Oez"/>
-                            <constraint firstItem="Ldg-gM-Krx" firstAttribute="top" secondItem="s6j-Sc-Q2c" secondAttribute="bottom" constant="-5" id="nwR-YZ-UYb"/>
-                            <constraint firstItem="s6j-Sc-Q2c" firstAttribute="trailing" secondItem="xT0-x8-70t" secondAttribute="trailing" id="zfz-qV-Htf"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imagesCollectionView" destination="s6j-Sc-Q2c" id="4CO-ZW-laO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OP1-sj-ML0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2421.739130434783" y="73.660714285714278"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zR1-Ww-0Uh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wdw-qo-abl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Wdw-qo-abl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4xd-6A-4To">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

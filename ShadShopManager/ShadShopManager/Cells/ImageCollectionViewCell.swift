@@ -7,19 +7,16 @@
 
 import UIKit
 
-class ImageCollectionViewCell: UICollectionViewCell {
-
-    var deleteDidTap: (()->Void)?
+class ImageCollectionViewCell: UICollectionViewCell, ReusableCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var deleteButton: UIButton!
-
     
+    var deleteDidTap: (()->Void)?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         deleteButton.layer.backgroundColor = UIColor.gray.cgColor
-        
     }
     
     @IBAction func deleteButtonOnClick(_ sender: Any) {
