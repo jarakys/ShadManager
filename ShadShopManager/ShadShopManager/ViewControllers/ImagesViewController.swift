@@ -9,9 +9,12 @@ import UIKit
 import BSImagePicker
 import Photos
 
-class ImagesViewController: UIViewController{
+class ImagesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
+    
+    let photoPicker = UIImagePickerController()
+    
     private var imagePicker = ImagePickerController()
     
     private var arrayOfImages = [UIImage]()
@@ -21,9 +24,13 @@ class ImagesViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoPicker.allowsEditing = true
+//        photoPicker.sourceType = .camera
+////        photoPicker.delegate = self
         imagesCollectionView.dataSource = self
         imagesCollectionView.delegate = self
         imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.reusableIndentify)
+        
     }
     
     private func presentPicker() {
@@ -34,14 +41,20 @@ class ImagesViewController: UIViewController{
                             print("deselect")
                            }, cancel: { (assets) in
                             print("cancel")
-                           }, finish: { (assets) in
+                           }, finish: { [weak self] (assets) in
+                            guard let self = self else { return }
+                            self.arrayOfImages = self.getImagesFromAsset(assets: assets)
                             print("finish")
+                            print("In arr\(self.arrayOfImages.count)")
+                            self.imagesCollectionView.reloadData()
                            })
+        
     }
     
     @IBAction func addImagesOnClick(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+            self.present(self.photoPicker, animated: true, completion: nil)
             //TODO: Open camera
         }))
         
@@ -60,7 +73,7 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imagesCollectionView.dequeueReusableCell(withReuseIdentifier: "cellImage", for: indexPath) as! ImageCollectionViewCell
+        let cell = imagesCollectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reusableIndentify, for: indexPath) as! ImageCollectionViewCell
         let image = arrayOfImages[indexPath.item]
         cell.imageView.image = image
         cell.deleteDidTap = {[weak self, weak collectionView] in
@@ -81,4 +94,31 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return CGSize(width: widthCell - spacing, height: heghtCell - (offset*2))
     }
+    
+    func getImagesFromAsset(assets: [PHAsset]) -> [UIImage] {
+        var arrImg = [UIImage]()
+        let imgManager = PHImageManager.default()
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+        
+        for item in assets{
+            imgManager.requestImage(for: item, targetSize: CGSize(width: 1,height: 1), contentMode: PHImageContentMode.aspectFit, options: requestOptions) {(img, _) in
+                if let image = img {
+                    arrImg.append(image)
+                }
+            }
+        }
+        return arrImg
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
+        guard let photo = info[.editedImage] as? UIImage else {return}
+        
+        arrayOfImages.append(photo)
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
+
+

@@ -58,7 +58,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imagesCollectionView" destination="ceR-5Q-jCc" id="Txv-wL-KLt"/>
+                        <outlet property="ImagesCollectionView" destination="ceR-5Q-jCc" id="Ec5-zw-Zgf"/>
+                        <outlet property="imagesCollectionView" destination="ceR-5Q-jCc" id="wCs-Jc-LWz"/>
+                        <outletCollection property="imagesCollectionView" destination="ceR-5Q-jCc" collectionClass="NSMutableArray" id="NFk-FK-qa4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
