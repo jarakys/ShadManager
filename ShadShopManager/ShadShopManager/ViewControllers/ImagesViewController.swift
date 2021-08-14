@@ -13,12 +13,10 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
-    let photoPicker = UIImagePickerController()
-    
+    private let photoPicker = UIImagePickerController()
     private var imagePicker = ImagePickerController()
     
     private var arrayOfImages = [UIImage]()
-    
     private let countCells = 2
     private let offset: CGFloat = 5.0
     
@@ -26,7 +24,7 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         photoPicker.allowsEditing = true
 //        photoPicker.sourceType = .camera
-////        photoPicker.delegate = self
+        photoPicker.delegate = self
         imagesCollectionView.dataSource = self
         imagesCollectionView.delegate = self
         imagesCollectionView.register(ImageCollectionViewCell.nib, forCellWithReuseIdentifier: ImageCollectionViewCell.reusableIndentify)
@@ -36,26 +34,36 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate, U
     private func presentPicker() {
         presentImagePicker(imagePicker,
                            select: { (asset) in
-                            print("select")
                            }, deselect: { (asset) in
-                            print("deselect")
                            }, cancel: { (assets) in
-                            print("cancel")
                            }, finish: { [weak self] (assets) in
                             guard let self = self else { return }
                             self.arrayOfImages = self.getImagesFromAsset(assets: assets)
-                            print("finish")
-                            print("In arr\(self.arrayOfImages.count)")
                             self.imagesCollectionView.reloadData()
                            })
         
+    }
+    
+    private func getImagesFromAsset(assets: [PHAsset]) -> [UIImage] {
+        var arrImg = [UIImage]()
+        let imgManager = PHImageManager.default()
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+        
+        for item in assets{
+            imgManager.requestImage(for: item, targetSize: CGSize(width: 250,height: 250), contentMode: PHImageContentMode.aspectFit, options: requestOptions) {(img, _) in
+                if let image = img {
+                    arrImg.append(image)
+                }
+            }
+        }
+        return arrImg
     }
     
     @IBAction func addImagesOnClick(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
             self.present(self.photoPicker, animated: true, completion: nil)
-            //TODO: Open camera
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Library", style: .default, handler: {[weak self] (action: UIAlertAction) in
@@ -67,7 +75,7 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 }
 
-extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrayOfImages.count
     }
@@ -94,31 +102,13 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return CGSize(width: widthCell - spacing, height: heghtCell - (offset*2))
     }
-    
-    func getImagesFromAsset(assets: [PHAsset]) -> [UIImage] {
-        var arrImg = [UIImage]()
-        let imgManager = PHImageManager.default()
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
-        
-        for item in assets{
-            imgManager.requestImage(for: item, targetSize: CGSize(width: 1,height: 1), contentMode: PHImageContentMode.aspectFit, options: requestOptions) {(img, _) in
-                if let image = img {
-                    arrImg.append(image)
-                }
-            }
-        }
-        return arrImg
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        
-        guard let photo = info[.editedImage] as? UIImage else {return}
+}
+
+extension ImagesViewController {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let photo = info[.editedImage] as? UIImage else { return }
         
         arrayOfImages.append(photo)
-        
         dismiss(animated: true, completion: nil)
     }
 }
-
-
