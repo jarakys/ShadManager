@@ -21,9 +21,8 @@ class LoginViewController: BaseViewController {
     
     @IBAction func Login(_ sender: UIButton) {
         let storyboard = UIStoryboard.storyboard(storyboard: .main)
-        let imagesViewController: ImagesViewController = storyboard.instantiateViewController()
-        navigationController?.pushViewController(imagesViewController, animated: false)
+        let tabBarController: UITabBarController = storyboard.instantiateViewController()
+        UIApplication.shared.windows.first?.rootViewController = tabBarController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
      }
 }
-
-

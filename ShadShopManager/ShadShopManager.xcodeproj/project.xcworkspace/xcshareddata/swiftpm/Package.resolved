@@ -18,6 +18,33 @@
           "revision": "750f26abd0fafbcc4124adef436251888a7c962a",
           "version": "3.3.1"
         }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "8d4f6384e0a8cc41f2005247241dd553963a492a",
+          "version": "1.4.1"
+        }
+      },
+      {
+        "package": "KeychainSwift",
+        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "96fb84f45a96630e7583903bd7e08cf095c7a7ef",
+          "version": "19.0.0"
+        }
+      },
+      {
+        "package": "SwiftyInsta",
+        "repositoryURL": "https://github.com/jarakys/SwiftyInsta.git",
+        "state": {
+          "branch": "master",
+          "revision": "6287a9faa34f3e045b30e141bf83459374bb9152",
+          "version": null
+        }
       }
     ]
   },

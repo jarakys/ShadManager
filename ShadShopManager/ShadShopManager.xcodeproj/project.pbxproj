@@ -24,6 +24,13 @@
 		ED25D59C26C2FE39007DF680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED25D59B26C2FE39007DF680 /* Main.storyboard */; };
 		ED25D5A026C30071007DF680 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D59F26C30071007DF680 /* ReusableCell.swift */; };
 		ED25D5A326C30195007DF680 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = ED25D5A226C30195007DF680 /* BSImagePicker */; };
+		ED25D5A926C820A5007DF680 /* SwiftyInsta in Frameworks */ = {isa = PBXBuildFile; productRef = ED25D5A826C820A5007DF680 /* SwiftyInsta */; };
+		ED25D5AC26C821C8007DF680 /* InstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5AB26C821C8007DF680 /* InstagramManager.swift */; };
+		ED25D5B126C82396007DF680 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B026C82396007DF680 /* SettingsViewController.swift */; };
+		ED25D5B326C82516007DF680 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED25D5B226C82516007DF680 /* SettingsCell.xib */; };
+		ED25D5B526C82561007DF680 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B426C82561007DF680 /* SettingsCell.swift */; };
+		ED25D5B826C82631007DF680 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B726C82631007DF680 /* SettingViewModel.swift */; };
+		ED25D5BA26C830A9007DF680 /* UIWindow+topViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B926C830A9007DF680 /* UIWindow+topViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +64,12 @@
 		ED25D59726C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
 		ED25D59B26C2FE39007DF680 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED25D59F26C30071007DF680 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		ED25D5AB26C821C8007DF680 /* InstagramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramManager.swift; sourceTree = "<group>"; };
+		ED25D5B026C82396007DF680 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED25D5B226C82516007DF680 /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		ED25D5B426C82561007DF680 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		ED25D5B726C82631007DF680 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		ED25D5B926C830A9007DF680 /* UIWindow+topViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+topViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F5E07F26BC5B2D008D9170 /* Alamofire in Frameworks */,
+				ED25D5A926C820A5007DF680 /* SwiftyInsta in Frameworks */,
 				ED25D5A326C30195007DF680 /* BSImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,10 +105,12 @@
 		11E54ECB26B07FD20002A7A5 /* ShadShopManager */ = {
 			isa = PBXGroup;
 			children = (
+				ED25D5B626C82624007DF680 /* ViewModel */,
 				ED25D59E26C30062007DF680 /* Protocols */,
 				ED25D59D26C2FEFE007DF680 /* Cells */,
 				ED25D59426C2FC40007DF680 /* Extensions */,
 				11E54EEC26B447350002A7A5 /* ViewControllers */,
+				ED25D5AA26C8214E007DF680 /* Managers */,
 				11E54ECC26B07FD20002A7A5 /* AppDelegate.swift */,
 				11E54ECE26B07FD20002A7A5 /* SceneDelegate.swift */,
 				11E54EDA26B07FD50002A7A5 /* Info.plist */,
@@ -106,10 +122,9 @@
 		11E54EEC26B447350002A7A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				11E54EE226B0836D0002A7A5 /* LoginViewController.swift */,
-				11E54EEA26B447210002A7A5 /* RegisterViewController.swift */,
+				ED25D5AE26C8237F007DF680 /* Main */,
+				ED25D5AD26C82377007DF680 /* Auth */,
 				11E54EEE26B44B350002A7A5 /* BaseViewController.swift */,
-				11E54EF626B5D5050002A7A5 /* ImagesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +145,7 @@
 			children = (
 				ED25D59526C2FC52007DF680 /* String+isMatch.swift */,
 				ED25D59726C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift */,
+				ED25D5B926C830A9007DF680 /* UIWindow+topViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				11E54EF326B567640002A7A5 /* ImageCollectionViewCell.xib */,
+				ED25D5B226C82516007DF680 /* SettingsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				11E54EF226B567640002A7A5 /* ImageCollectionViewCell.swift */,
+				ED25D5B426C82561007DF680 /* SettingsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -165,6 +183,40 @@
 				ED25D59F26C30071007DF680 /* ReusableCell.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ED25D5AA26C8214E007DF680 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				ED25D5AB26C821C8007DF680 /* InstagramManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		ED25D5AD26C82377007DF680 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				11E54EE226B0836D0002A7A5 /* LoginViewController.swift */,
+				11E54EEA26B447210002A7A5 /* RegisterViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ED25D5AE26C8237F007DF680 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				11E54EF626B5D5050002A7A5 /* ImagesViewController.swift */,
+				ED25D5B026C82396007DF680 /* SettingsViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		ED25D5B626C82624007DF680 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED25D5B726C82631007DF680 /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +239,7 @@
 			packageProductDependencies = (
 				11F5E07E26BC5B2D008D9170 /* Alamofire */,
 				ED25D5A226C30195007DF680 /* BSImagePicker */,
+				ED25D5A826C820A5007DF680 /* SwiftyInsta */,
 			);
 			productName = ShadShopManager;
 			productReference = 11E54EC926B07FD20002A7A5 /* ShadShopManager.app */;
@@ -218,6 +271,7 @@
 			packageReferences = (
 				11F5E07D26BC5B2D008D9170 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				ED25D5A126C30195007DF680 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
+				ED25D5A726C820A5007DF680 /* XCRemoteSwiftPackageReference "SwiftyInsta" */,
 			);
 			productRefGroup = 11E54ECA26B07FD20002A7A5 /* Products */;
 			projectDirPath = "";
@@ -233,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED25D5B326C82516007DF680 /* SettingsCell.xib in Resources */,
 				11E54ED926B07FD50002A7A5 /* LaunchScreen.storyboard in Resources */,
 				ED25D59C26C2FE39007DF680 /* Main.storyboard in Resources */,
 				11E54ED626B07FD50002A7A5 /* Assets.xcassets in Resources */,
@@ -249,15 +304,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED25D5A026C30071007DF680 /* ReusableCell.swift in Sources */,
+				ED25D5B826C82631007DF680 /* SettingViewModel.swift in Sources */,
 				11E54EF426B567640002A7A5 /* ImageCollectionViewCell.swift in Sources */,
 				11E54EF726B5D5050002A7A5 /* ImagesViewController.swift in Sources */,
+				ED25D5BA26C830A9007DF680 /* UIWindow+topViewController.swift in Sources */,
 				ED25D59626C2FC52007DF680 /* String+isMatch.swift in Sources */,
+				ED25D5B526C82561007DF680 /* SettingsCell.swift in Sources */,
 				11E54EEF26B44B350002A7A5 /* BaseViewController.swift in Sources */,
 				11E54EE326B0836D0002A7A5 /* LoginViewController.swift in Sources */,
 				11E54EEB26B447210002A7A5 /* RegisterViewController.swift in Sources */,
+				ED25D5AC26C821C8007DF680 /* InstagramManager.swift in Sources */,
 				11E54ECD26B07FD20002A7A5 /* AppDelegate.swift in Sources */,
 				11E54ECF26B07FD20002A7A5 /* SceneDelegate.swift in Sources */,
 				ED25D59826C2FD09007DF680 /* UIViewController+StoryboardInstantiable.swift in Sources */,
+				ED25D5B126C82396007DF680 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +539,14 @@
 				minimumVersion = 3.3.1;
 			};
 		};
+		ED25D5A726C820A5007DF680 /* XCRemoteSwiftPackageReference "SwiftyInsta" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jarakys/SwiftyInsta.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -491,6 +559,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ED25D5A126C30195007DF680 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
 			productName = BSImagePicker;
+		};
+		ED25D5A826C820A5007DF680 /* SwiftyInsta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED25D5A726C820A5007DF680 /* XCRemoteSwiftPackageReference "SwiftyInsta" */;
+			productName = SwiftyInsta;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Images View Controller-->
+        <!--Main-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="ImagesViewController" id="Y6W-OH-hqX" customClass="ImagesViewController" customModule="ShadShopManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,6 +57,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ceR-5Q-jCc" secondAttribute="trailing" id="wss-vV-Ojx"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Main" image="homekit" catalog="system" id="EvJ-8q-ZXz"/>
                     <connections>
                         <outlet property="ImagesCollectionView" destination="ceR-5Q-jCc" id="Ec5-zw-Zgf"/>
                         <outlet property="imagesCollectionView" destination="ceR-5Q-jCc" id="wCs-Jc-LWz"/>
@@ -65,10 +66,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="55"/>
+            <point key="canvasLocation" x="781" y="-424"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oZV-qP-brw">
+            <objects>
+                <tabBarController storyboardIdentifier="UITabBarController" automaticallyAdjustsScrollViewInsets="NO" id="M0z-WG-nCd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VoR-yq-x3u">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="73P-xk-dcN"/>
+                        <segue destination="sga-GF-NOg" kind="relationship" relationship="viewControllers" id="gow-Ac-yk5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ogx-0r-NKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="-93"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="H1l-OK-RKj">
+            <objects>
+                <viewController id="sga-GF-NOg" customClass="SettingsViewController" customModule="ShadShopManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3uj-uK-1oP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zXV-sz-w0k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Raj-qc-1Dq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zXV-sz-w0k" firstAttribute="top" secondItem="Raj-qc-1Dq" secondAttribute="top" id="AQW-dN-JEc"/>
+                            <constraint firstItem="Raj-qc-1Dq" firstAttribute="trailing" secondItem="zXV-sz-w0k" secondAttribute="trailing" id="Aw7-DT-Wxe"/>
+                            <constraint firstItem="zXV-sz-w0k" firstAttribute="leading" secondItem="Raj-qc-1Dq" secondAttribute="leading" id="wcr-b6-4yE"/>
+                            <constraint firstItem="Raj-qc-1Dq" firstAttribute="bottom" secondItem="zXV-sz-w0k" secondAttribute="bottom" id="xXp-lp-cxu"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="j2z-y5-Kzp"/>
+                    <connections>
+                        <outlet property="settingsTableView" destination="zXV-sz-w0k" id="FNc-9J-gTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slF-Bd-9vy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="268"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
