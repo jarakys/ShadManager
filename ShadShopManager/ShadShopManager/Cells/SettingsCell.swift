@@ -13,8 +13,6 @@ class SettingsCell: UITableViewCell, ReusableCell {
     @IBOutlet weak var settingSwitch: UISwitch!
     
     private var node: SettingViewModel.Node?
-    
-    var didSwitch: ((Bool) -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
