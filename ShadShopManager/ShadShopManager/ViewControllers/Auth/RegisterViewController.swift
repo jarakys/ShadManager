@@ -14,10 +14,6 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPassLabel: UILabel!
     
-    private var regexEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    
-    private var regexPass = "[A-Z0-9a-z]{8,}"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerButton.layer.cornerRadius = 15
@@ -30,16 +26,30 @@ class RegisterViewController: BaseViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         if let email = emailTextField.text, email.isMatch(regexEmail) {
-            errorEmailLabel.text = "done"
+            if let password = passTextField.text, password.isMatch(regexPass) {
+                let registerModel = UserRequestModel(login: email, password: password)
+                AuthManager.shareInstance.callingRegister(user: registerModel, completionHandler: {(result) in
+                    
+                    switch (result) {
+                    case .success(let model):
+                        let alert = UIAlertController(title: "Success", message: "User register successfully", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK",style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    case .failure(let err):
+                        let alert = UIAlertController(title: "Alert", message: "\(err.message)", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK",style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                })
+            }
+            else {
+                errorPassLabel.text = "Incorrct pass format"}
         }
         else {
             errorEmailLabel.text = "Incorrct email format"
         }
-        if let password = passTextField.text, password.isMatch(regexPass) {
-            errorPassLabel.text = "done"
-        }
-        else {
-            errorPassLabel.text = "Incorrct pass format"}
+        
     }
 }
 
