@@ -12,7 +12,7 @@ class SettingsCell: UITableViewCell, ReusableCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var settingSwitch: UISwitch!
     
-    private var node: SettingViewModel.Node?
+    private var node: SettingViewModel.Section.Node?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,10 +22,11 @@ class SettingsCell: UITableViewCell, ReusableCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(node: SettingViewModel.Node) {
+    func configure(node: SettingViewModel.Section.Node) {
         self.node = node
         titleLabel.text = node.title.description
         settingSwitch.isOn = node.isOn
+        settingSwitch.isHidden = node.hideToggle
     }
 
     @IBAction func valueDidChanged(_ sender: Any) {

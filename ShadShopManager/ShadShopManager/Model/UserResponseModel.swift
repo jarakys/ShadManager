@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UserResponseModel: Codable{
+struct UserResponseModel: Codable {
    let id: String
    let login: String
-   let connectedServices: [String]
+   let connectedServices: [ConnectedServiceModel]
    let token: String 
 }

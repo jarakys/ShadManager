@@ -36,6 +36,13 @@
 		ED25D5B526C82561007DF680 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B426C82561007DF680 /* SettingsCell.swift */; };
 		ED25D5B826C82631007DF680 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B726C82631007DF680 /* SettingViewModel.swift */; };
 		ED25D5BA26C830A9007DF680 /* UIWindow+topViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED25D5B926C830A9007DF680 /* UIWindow+topViewController.swift */; };
+		ED94D5F826EBFA0D001B251C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94D5F726EBFA0D001B251C /* APIManager.swift */; };
+		ED94D5FC26ECEBA8001B251C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94D5FB26ECEBA8001B251C /* UserManager.swift */; };
+		ED94D5FE26ECEC04001B251C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94D5FD26ECEC04001B251C /* UserModel.swift */; };
+		ED94D60026ECEC46001B251C /* ConnectedServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94D5FF26ECEC46001B251C /* ConnectedServiceModel.swift */; };
+		ED94D60226ED0138001B251C /* ConnectedServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94D60126ED0138001B251C /* ConnectedServiceType.swift */; };
+		ED94D60526ED0185001B251C /* SettingsServiceHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94D60426ED0185001B251C /* SettingsServiceHeader.swift */; };
+		ED94D60826ED019A001B251C /* SettingsServiceHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED94D60726ED019A001B251C /* SettingsServiceHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +87,13 @@
 		ED25D5B426C82561007DF680 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		ED25D5B726C82631007DF680 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		ED25D5B926C830A9007DF680 /* UIWindow+topViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+topViewController.swift"; sourceTree = "<group>"; };
+		ED94D5F726EBFA0D001B251C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		ED94D5FB26ECEBA8001B251C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		ED94D5FD26ECEC04001B251C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		ED94D5FF26ECEC46001B251C /* ConnectedServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedServiceModel.swift; sourceTree = "<group>"; };
+		ED94D60126ED0138001B251C /* ConnectedServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedServiceType.swift; sourceTree = "<group>"; };
+		ED94D60426ED0185001B251C /* SettingsServiceHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsServiceHeader.swift; sourceTree = "<group>"; };
+		ED94D60726ED019A001B251C /* SettingsServiceHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsServiceHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +129,8 @@
 		11E54ECB26B07FD20002A7A5 /* ShadShopManager */ = {
 			isa = PBXGroup;
 			children = (
+				ED94D60326ED016F001B251C /* Views */,
+				ED94D5F626EBFA02001B251C /* API */,
 				11F5E08126D27543008D9170 /* Constants.swift */,
 				11F5E08326D2771D008D9170 /* Model */,
 				ED25D5B626C82624007DF680 /* ViewModel */,
@@ -145,6 +161,7 @@
 		11E54EED26B447CA0002A7A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED94D60626ED0192001B251C /* Views */,
 				ED25D59A26C2FDB8007DF680 /* Storyboards */,
 				ED25D59926C2FDA5007DF680 /* Cells */,
 				11E54ED526B07FD50002A7A5 /* Assets.xcassets */,
@@ -159,6 +176,9 @@
 				11F5E08426D27785008D9170 /* UserRequestModel.swift */,
 				11F5E08926DB8D23008D9170 /* UserResponseModel.swift */,
 				11269E3826E77028000823BC /* ErrorResponseModel.swift */,
+				ED94D5FD26ECEC04001B251C /* UserModel.swift */,
+				ED94D5FF26ECEC46001B251C /* ConnectedServiceModel.swift */,
+				ED94D60126ED0138001B251C /* ConnectedServiceType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				ED25D5AB26C821C8007DF680 /* InstagramManager.swift */,
+				ED94D5FB26ECEBA8001B251C /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -240,6 +261,30 @@
 				ED25D5B726C82631007DF680 /* SettingViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED94D5F626EBFA02001B251C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				ED94D5F726EBFA0D001B251C /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		ED94D60326ED016F001B251C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED94D60426ED0185001B251C /* SettingsServiceHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED94D60626ED0192001B251C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED94D60726ED019A001B251C /* SettingsServiceHeader.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +360,7 @@
 				ED25D59C26C2FE39007DF680 /* Main.storyboard in Resources */,
 				11E54ED626B07FD50002A7A5 /* Assets.xcassets in Resources */,
 				11E54ED426B07FD20002A7A5 /* Auth.storyboard in Resources */,
+				ED94D60826ED019A001B251C /* SettingsServiceHeader.xib in Resources */,
 				11E54EF526B567640002A7A5 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,13 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED94D60026ECEC46001B251C /* ConnectedServiceModel.swift in Sources */,
 				ED25D5A026C30071007DF680 /* ReusableCell.swift in Sources */,
 				ED25D5B826C82631007DF680 /* SettingViewModel.swift in Sources */,
+				ED94D60526ED0185001B251C /* SettingsServiceHeader.swift in Sources */,
 				11E54EF426B567640002A7A5 /* ImageCollectionViewCell.swift in Sources */,
 				11E54EF726B5D5050002A7A5 /* ImagesViewController.swift in Sources */,
 				ED25D5BA26C830A9007DF680 /* UIWindow+topViewController.swift in Sources */,
 				ED25D59626C2FC52007DF680 /* String+isMatch.swift in Sources */,
+				ED94D5FC26ECEBA8001B251C /* UserManager.swift in Sources */,
+				ED94D5F826EBFA0D001B251C /* APIManager.swift in Sources */,
+				ED94D60226ED0138001B251C /* ConnectedServiceType.swift in Sources */,
 				ED25D5B526C82561007DF680 /* SettingsCell.swift in Sources */,
+				ED94D5FE26ECEC04001B251C /* UserModel.swift in Sources */,
 				11E54EEF26B44B350002A7A5 /* BaseViewController.swift in Sources */,
 				11E54EE326B0836D0002A7A5 /* LoginViewController.swift in Sources */,
 				11F5E08226D27544008D9170 /* Constants.swift in Sources */,
@@ -493,7 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6NNWR2JHQ8;
 				INFOPLIST_FILE = ShadShopManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,7 +565,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6NNWR2JHQ8;
 				INFOPLIST_FILE = ShadShopManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

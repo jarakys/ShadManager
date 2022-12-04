@@ -8,6 +8,10 @@
 import UIKit
 import SwiftyInsta
 
+enum InstagramError: Error {
+    case loginError
+}
+
 final class InstagramManager {
     static let shared = InstagramManager()
     
@@ -15,8 +19,12 @@ final class InstagramManager {
     var handler = APIHandler()
 
     private var userTags: Dictionary<String, DynamicResponse>!
+    
+    private(set) var instaKey: String
 
-    private init() { }
+    private init() {
+        instaKey = ""
+    }
 
     var isChached: Bool {
 
@@ -62,17 +70,19 @@ final class InstagramManager {
 //        })
 //    }
 
-    func login(completion: @escaping(Bool) -> Void) {
+    func login(completion: @escaping(Result<Authentication.Response, Error>) -> Void) {
         guard let topVC = UIApplication.shared.windows.first?.topViewController() else { return }
         let loginVC = LoginWebViewController { controller, result in
             controller.dismiss(animated: true, completion: nil)
             // deal with authentication response.
+            
             guard let (response, _) = try? result.get() else { return print("Login failed.") }
             print("Login successful.")
             // persist cache safely in the keychain for logging in again in the future.
             guard let key = response.persist() else { return print("`Authentication.Response` could not be persisted.") }
             // store the `key` wherever you want, so you can access the `Authentication.Response` later.
             // `UserDefaults` is just an example.
+            self.instaKey = key
             UserDefaults.standard.set(key, forKey: "current.account")
             UserDefaults.standard.synchronize()
             self.login(with: response, completion: completion)
@@ -80,15 +90,14 @@ final class InstagramManager {
         topVC.present(loginVC, animated: true, completion: nil)
     }
 
-    func login(with cache: Authentication.Response, completion: @escaping(Bool) -> Void) {
+    func login(with cache: Authentication.Response, completion: @escaping(Result<Authentication.Response, Error>) -> Void) {
         handler.authenticate(with: .cache(cache), completionHandler: {result in
             switch result {
             case .success(let response):
-                print("Success")
-                completion(true)
+                completion(.success(response.0))
             case .failure(let error):
                 print("Error")
-                completion(false)
+                completion(.failure(error))
             }
         })
     }
